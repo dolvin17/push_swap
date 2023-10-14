@@ -6,89 +6,54 @@
 /*   By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 10:24:39 by dolvin17          #+#    #+#             */
-/*   Updated: 2022/10/08 11:58:57 by dolvin17         ###   ########.fr       */
+/*   Updated: 2023/10/14 21:26:16 by dolvin17         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static	int	chek_zero(char **argv)
+int	order_three(t_stack stacks[2])
 {
-	int	i;
+	int	*value;
 
-	i = 0;
-	if (argv[i] == '+' || argv[i] == '-')
-		i++;
-	while (argv[i] && argv[i] == '0')
-		i++;
-	if (argv[i] != '\0')
-		return (0);
-	return (1);
-}
-
-static	int	check_number(char **argv)
-{
-	int	i;
-
-	i = 0;
-	if (argv[i] == '+' || argv[i] == '-' && argv[i + 1] != '\0')
-		i++;
-	while ((argv[i]) && (argv[i] >= '0' && argv[i] <= '9'))
-		i++;
-	if ((argv[i] != '\0') && (!(argv[i] >= '0' && argv[i] <= '9')))
-		return (0);
-	return (1);
-}
-static	int	check_dup(char **argv)
-{
-	int	i;
-	int	j;
-
-	while (argv[i])
+	value = stacks[0].content;
+	if (stacks[0].size < 4)
 	{
-		j = 1;
-		while (argv[j])
-		{
-			if (j != i && argv[i] - argv[j] == 0)
-				return (1);
-			j++;
-		}
-		i++;
+		if (value[2] > value[0] && value[0] > value[1])
+			printf("SA");
+		else if (value[0] > value[2] && value[2] > value[1])
+			printf("RA");
+		else if (value[1] > value[0] && value[0] > value[2])
+			printf("RRA");
+		else if (value[0] > value[1] && value[1] > value[2])
+			printf("RA SA");
+		else if (value[1] > value[2] && value[2] > value[0])
+			printf("PB SA PA");
 	}
+	else
+		printf("entra");
 	return (0);
 }
-static int	check_input(char **argv)
-{
-	int i;
-	int nzeros;
 
-	nzeros = 0;
-	i = 1;
-	while (argv[i])
-	{
-		if (!check_number(argv[i]))
-			return (0);
-		nzeros = nzeros + chek_zero(argv[i]);
-		i++;
-	}
-	if (nzeros > 1)
-		return (0);
-	if (check_dup(argv))
-		return (0);
-	return (1);
-}
 int	main(int argc, char **argv)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
-	int	stack_size;
+	t_stack	stacks[2];
+	int		pos;
 
-	if (argc < 2)
-		return (0);
-	if (!check_input(argv))
-		return (42);
-	stack_b = NULL;
-	stack_a = 2, 3, 4;//funcion colocar valores en stack;
-	stack_size = 3;// size del stack;
+	pos = 1;
+	stacks[0].size = argc - 1;
+	stacks[1].size = stacks[0].size;
+	stacks[0].content = (int *)malloc(sizeof(int) * stacks[0].size);
+	stacks[1].content = (int *)malloc(sizeof(int) * stacks[1].size);
+	while (pos < argc)
+	{
+		if (argv[pos])
+		stacks[0].content[pos - 1] = atoi(argv[pos]);
+		printf("input: %d\n", stacks[0].content[pos - 1]);
+		pos++;
+	}
+	order_three(stacks);
+	free(stacks[0].content);
+	free(stacks[1].content);
 	return (0);
 }
