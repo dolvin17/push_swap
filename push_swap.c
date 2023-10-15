@@ -6,11 +6,22 @@
 /*   By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 10:24:39 by dolvin17          #+#    #+#             */
-/*   Updated: 2023/10/14 21:26:16 by dolvin17         ###   ########.fr       */
+/*   Updated: 2023/10/15 19:20:29 by dolvin17         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	is_sorted(t_stack stack)
+{
+	int	i;
+
+	i = 0;
+	while (++i < stack.size)
+		if (stack.content[i - 1] > stack.content[i])
+			return (0);
+	return (1);
+}
 
 int	order_three(t_stack stacks[2])
 {
@@ -20,19 +31,19 @@ int	order_three(t_stack stacks[2])
 	if (stacks[0].size < 4)
 	{
 		if (value[2] > value[0] && value[0] > value[1])
-			printf("SA");
+			ft_sa("SA", stacks);
 		else if (value[0] > value[2] && value[2] > value[1])
-			printf("RA");
+			ft_ra("RA", stacks);
 		else if (value[1] > value[0] && value[0] > value[2])
-			printf("RRA");
+			ft_rra("RRA", stacks);
 		else if (value[0] > value[1] && value[1] > value[2])
-			printf("RA SA");
+			ft_ra("RA", stacks);
 		else if (value[1] > value[2] && value[2] > value[0])
 			printf("PB SA PA");
 	}
-	else
-		printf("entra");
-	return (0);
+	if (is_sorted(stacks[0]))
+		return (EXIT_SUCCESS);
+	return (order_three(stacks));
 }
 
 int	main(int argc, char **argv)
@@ -49,10 +60,13 @@ int	main(int argc, char **argv)
 	{
 		if (argv[pos])
 		stacks[0].content[pos - 1] = atoi(argv[pos]);
-		printf("input: %d\n", stacks[0].content[pos - 1]);
+		//printf("input: %d\n", stacks[0].content[pos - 1]);
 		pos++;
 	}
 	order_three(stacks);
+	printf("after %d\n", stacks[0].content[0]);
+	printf("after %d\n", stacks[0].content[1]);
+	printf("after %d\n", stacks[0].content[2]);
 	free(stacks[0].content);
 	free(stacks[1].content);
 	return (0);

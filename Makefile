@@ -6,11 +6,12 @@
 #    By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/08 10:28:23 by dolvin17          #+#    #+#              #
-#    Updated: 2023/10/14 20:33:33 by dolvin17         ###   ########.fr        #
+#    Updated: 2023/10/15 16:23:25 by dolvin17         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS =		push_swap.c \
+			sort_short.c \
 
 OBJS = $(SRCS:.c=.o)
 CC = gcc
