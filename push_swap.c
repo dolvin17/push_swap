@@ -6,7 +6,7 @@
 /*   By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 10:24:39 by dolvin17          #+#    #+#             */
-/*   Updated: 2023/10/15 19:20:29 by dolvin17         ###   ########.fr       */
+/*   Updated: 2023/10/16 21:23:17 by dolvin17         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	order_three(t_stack stacks[2])
 		else if (value[0] > value[1] && value[1] > value[2])
 			ft_ra("RA", stacks);
 		else if (value[1] > value[2] && value[2] > value[0])
-			printf("PB SA PA");
+			ft_sa("SA", stacks);
 	}
 	if (is_sorted(stacks[0]))
 		return (EXIT_SUCCESS);
@@ -60,13 +60,12 @@ int	main(int argc, char **argv)
 	{
 		if (argv[pos])
 		stacks[0].content[pos - 1] = atoi(argv[pos]);
-		//printf("input: %d\n", stacks[0].content[pos - 1]);
 		pos++;
 	}
 	order_three(stacks);
-	printf("after %d\n", stacks[0].content[0]);
-	printf("after %d\n", stacks[0].content[1]);
-	printf("after %d\n", stacks[0].content[2]);
+	//printf("after %d\n", stacks[0].content[0]);
+	//printf("after %d\n", stacks[0].content[1]);
+	//printf("after %d\n", stacks[0].content[2]);
 	free(stacks[0].content);
 	free(stacks[1].content);
 	return (0);
