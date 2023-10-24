@@ -6,7 +6,7 @@
 /*   By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 10:24:39 by dolvin17          #+#    #+#             */
-/*   Updated: 2023/10/16 21:23:17 by dolvin17         ###   ########.fr       */
+/*   Updated: 2023/10/24 23:44:34 by dolvin17         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,9 @@ int	main(int argc, char **argv)
 		pos++;
 	}
 	order_three(stacks);
-	//printf("after %d\n", stacks[0].content[0]);
-	//printf("after %d\n", stacks[0].content[1]);
-	//printf("after %d\n", stacks[0].content[2]);
+	printf("after %d\n", stacks[0].content[0]);
+	printf("after %d\n", stacks[0].content[1]);
+	printf("after %d\n", stacks[0].content[2]);
 	free(stacks[0].content);
 	free(stacks[1].content);
 	return (0);
