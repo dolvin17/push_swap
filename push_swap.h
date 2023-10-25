@@ -6,7 +6,7 @@
 /*   By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 10:35:07 by dolvin17          #+#    #+#             */
-/*   Updated: 2023/10/16 21:35:34 by dolvin17         ###   ########.fr       */
+/*   Updated: 2023/10/25 21:45:59 by dolvin17         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ int		main(int argc, char **argv);
 void	ft_sa(char *operation, t_stack *stack);
 void	ft_ra(char *operation, t_stack *stack);
 void	ft_rra(char *operation, t_stack *stack);
+void	ft_push_b(char *operation, t_stack *stack_a, t_stack *stack_b);
 
 #endif
