@@ -3,15 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+         #
+#    By: ghuertas <ghuertas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/08 10:28:23 by dolvin17          #+#    #+#              #
-#    Updated: 2023/10/15 16:23:25 by dolvin17         ###   ########.fr        #
+#    Updated: 2023/11/02 00:00:59 by ghuertas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS =		push_swap.c \
-			sort_short.c \
+			operations.c \
+			order_three.c \
+			order_five.c \
 
 OBJS = $(SRCS:.c=.o)
 CC = gcc

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+        */
+/*   By: ghuertas <ghuertas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 10:35:07 by dolvin17          #+#    #+#             */
-/*   Updated: 2023/10/25 21:45:59 by dolvin17         ###   ########.fr       */
+/*   Updated: 2023/11/01 23:58:07 by ghuertas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,10 @@ void	ft_sa(char *operation, t_stack *stack);
 void	ft_ra(char *operation, t_stack *stack);
 void	ft_rra(char *operation, t_stack *stack);
 void	ft_push_b(char *operation, t_stack *stack_a, t_stack *stack_b);
+void	ft_push_a(char *operation, t_stack *stack_a, t_stack *stack_b);
+void	just_order_first(t_stack stacks[2]);
+int		is_sorted(t_stack stack);
+int		order_three(t_stack stacks[2]);
+int		order_five(t_stack stacks[2]);
 
 #endif
