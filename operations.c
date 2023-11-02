@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_short.c                                       :+:      :+:    :+:   */
+/*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ghuertas <ghuertas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 22:21:50 by dolvin17          #+#    #+#             */
-/*   Updated: 2023/11/01 23:59:20 by ghuertas         ###   ########.fr       */
+/*   Updated: 2023/11/02 04:06:16 by ghuertas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_sa(char *operation, t_stack *stack)
 
 	if (stack->size > 1)
 	{
-		write(1, "sa\n", 3);
+		write(1, operation, 3);
 		temp = stack->content[0];
 		stack->content[0] = stack->content[1];
 		stack->content[1] = temp;
@@ -39,28 +39,39 @@ void	ft_sa(char *operation, t_stack *stack)
 void	ft_ra(char *operation, t_stack *stack)
 {
 	int	temp;
+	int	i;
 
+	i = 0;
+	temp = stack->content[0];
 	if (stack->size > 1)
 	{
-		write(1, "ra\n", 3);
-		temp = stack->content[0];
-		stack->content[0] = stack->content[1];
-		stack->content[1] = stack->content[2];
-		stack->content[2] = temp;
+		while (i < stack->size -1)
+		{
+			stack->content[i] = stack->content[i + 1];
+			i++;
+		}
+		stack->content[stack->size -1] = temp;
+		write(1, operation, 3);
 	}
 }
 
 void	ft_rra(char *operation, t_stack *stack)
 {
 	int	temp;
+	int	size;
 
+	size = stack->size - 1;
+	temp = stack->content[stack->size -1];
 	if (stack->size > 1)
 	{
-		write(1, "rra\n", 4);
-		temp = stack->content[0];
-		stack->content[0] = stack->content[2];
-		stack->content[2] = stack->content[1];
-		stack->content[1] = temp;
+		while (size > 0)
+		{
+			stack->content[size] = stack->content[size - 1];
+			size--;
+		}
+		stack->content[0] = temp;
+		write(1, operation, 4);
+
 	}
 }
 
@@ -71,7 +82,7 @@ void	ft_push_b(char *operation, t_stack *stack_a, t_stack *stack_b)
 
 	if (stack_a->size > 0)
 	{
-		write(1, "pb\n", 3);
+		write(1, operation, 3);
 		stack_b->size++;
 		temp = (int *)malloc(sizeof(int) * stack_b->size);
 		if (!temp)
@@ -115,7 +126,7 @@ void	ft_push_a(char *operation, t_stack *stack_a, t_stack *stack_b)
 
 	if (stack_b->size > 0)
 	{
-		write(1, "pa\n", 3);
+		write(1, operation, 3);
 		stack_a->size++;
 		temp = (int *)malloc(sizeof(int) * stack_a->size);
 		if (!temp)

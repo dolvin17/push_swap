@@ -6,7 +6,7 @@
 /*   By: ghuertas <ghuertas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 23:46:52 by ghuertas          #+#    #+#             */
-/*   Updated: 2023/11/01 23:54:17 by ghuertas         ###   ########.fr       */
+/*   Updated: 2023/11/02 04:01:52 by ghuertas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,15 @@ int	order_three(t_stack stacks[2])
 	if (stacks[0].size < 4)
 	{
 		if (value[2] > value[0] && value[0] > value[1])
-			ft_sa("SA", stacks);
+			ft_sa("sa\n", stacks);
 		else if (value[0] > value[2] && value[2] > value[1])
-			ft_ra("RA", stacks);
+			ft_ra("ra\n", stacks);
 		else if (value[1] > value[0] && value[0] > value[2])
-			ft_rra("RRA", stacks);
+			ft_rra("rra\n", stacks);
 		else if (value[0] > value[1] && value[1] > value[2])
-			ft_ra("RA", stacks);
+			ft_ra("ra\n", stacks);
 		else if (value[1] > value[2] && value[2] > value[0])
-			ft_sa("SA", stacks);
+			ft_sa("sa\n", stacks);
 	}
 	if (is_sorted(stacks[0]))
 		return (EXIT_SUCCESS);
