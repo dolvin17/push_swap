@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ghuertas <ghuertas@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 22:21:50 by dolvin17          #+#    #+#             */
-/*   Updated: 2023/11/02 04:06:16 by ghuertas         ###   ########.fr       */
+/*   Updated: 2023/11/24 23:45:56 by dolvin17         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,6 @@ void	ft_rra(char *operation, t_stack *stack)
 		}
 		stack->content[0] = temp;
 		write(1, operation, 4);
-
 	}
 }
 
