@@ -16,7 +16,7 @@ To use Push Swap, provide an unsorted stack as command-line arguments, and the p
 
 bash
 
-./push_swap <list_of_integers>
+./push_swap $(cat nbrs.txt)
 
 Getting Started
 
@@ -24,7 +24,14 @@ To get started with Push Swap, clone the repository and compile the code using t
 
 bash
 
-git clone https://github.com/dolvin17/push_swap.git
-cd push_swap
-make
-./push_swap <list_of_integers>
+1) git clone https://github.com/dolvin17/push_swap.git
+2) cd push_swap
+3) make
+4) edit size of nbrs array on random.c at main.
+5) gcc random.c
+6) ./a.out > nbrs.txt
+7) ./push_swap $(cat nbrs.txt) | ./checker_Mac $(cat nbrs.txt)
+
+cheers!
+
+
