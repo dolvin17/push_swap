@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   order_three.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ghuertas <ghuertas@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 23:46:52 by ghuertas          #+#    #+#             */
-/*   Updated: 2023/11/02 04:01:52 by ghuertas         ###   ########.fr       */
+/*   Updated: 2023/11/24 22:16:55 by dolvin17         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	order_three(t_stack stacks[2])
+t_stack	order_three(t_stack stacks[2])
 {
 	int		*value;
 
@@ -31,6 +31,6 @@ int	order_three(t_stack stacks[2])
 			ft_sa("sa\n", stacks);
 	}
 	if (is_sorted(stacks[0]))
-		return (EXIT_SUCCESS);
+		return (stacks[0]);
 	return (order_three(stacks));
 }
