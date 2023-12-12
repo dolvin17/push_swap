@@ -6,36 +6,62 @@
 /*   By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 10:35:07 by dolvin17          #+#    #+#             */
-/*   Updated: 2023/11/24 22:29:59 by dolvin17         ###   ########.fr       */
+/*   Updated: 2023/12/12 02:25:55 by dolvin17         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <unistd.h>
-# include <limits.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <string.h>
-
-# define SA "sa"
+# include <unistd.h>	/*USE write*/
+# include <limits.h>	/*AVOID OVERFLOW*/
+# include <stdio.h>		/*Testing*/
+# include <stdlib.h>	/*Use Malloc, free, exit*/
+# include <stdbool.h>	/*USE cheapest value*/
+# include <errno.h>		/*print errors value*/
 
 typedef struct s_stack
 {
-	int	*content;
-	int	size;
+	int				data;
+	int				index;
+	int				push_expense;
+	bool			top_half;
+	bool			cheapest;
+	struct s_stack	*next;
+	struct s_stack	*prev;
+	struct s_stack	*target;
 }	t_stack;
 
-int			main(int argc, char **argv);
-void		ft_sa(char *operation, t_stack *stack);
-void		ft_ra(char *operation, t_stack *stack);
-void		ft_rra(char *operation, t_stack *stack);
-void		ft_push_b(char *operation, t_stack *stack_a, t_stack *stack_b);
-void		ft_push_a(char *operation, t_stack *stack_a, t_stack *stack_b);
-void		just_order_first(t_stack stacks[2]);
-int			is_sorted(t_stack stack);
-t_stack		order_three(t_stack stacks[2]);
-t_stack		order_five(t_stack stacks[2]);
+// Handle errors
+char	**ft_split(char *str, char c);
+int		long_atoi(char *str);
+int		check_syntax(char *str);
+int		check_dup(t_stack *stack_a, long nbr);
+void	free_stack(t_stack **stack);
+void	free_and_print_error(t_stack **stack_a);
+// Utils
+void	checking(bool if_error, int value, char *str);
+t_stack	*max_value(t_stack *stack);
+t_stack	*min_value(t_stack *stack);
+bool	is_sorted(t_stack *stack);
+int		check_len(t_stack *stack);
+// Custom nodes
+void	set_and_check_pos(t_stack	*stack);
+void	ready_to_push(t_stack **stack, t_stack *top, char c);
+void	customizing_stack_a(t_stack	*stack_a, t_stack *stack_b);
+void	customizing_stack_b(t_stack	*stack_a, t_stack *stack_b);
+void	push_cheapest(t_stack	**stack_a, t_stack	**stack_b);
+void	push_back_stack_a(t_stack	**stack_a, t_stack	**stack_b);
+// Operations
+void	ft_sa(char *operation, t_stack **head);
+void	ft_ra(char *operation, t_stack **head);
+void	ft_rra(char *operation, t_stack **head);
+void	ft_push(char	*operation, t_stack **dest, t_stack **src);
+// Double Operations
+void	ft_rr(char	*operation, t_stack **stack_a, t_stack **stack_b);
+void	ft_rrr(char	*operation, t_stack **stack_a, t_stack **stack_b);
+// Algorithm
+void	order_three(t_stack **stack_a);
+void	order_biggest(t_stack **stack_a, t_stack **stack_b);
 
 #endif
