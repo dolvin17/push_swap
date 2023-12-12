@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   random.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/10 12:01:59 by dolvin17          #+#    #+#             */
+/*   Updated: 2023/12/11 19:17:58 by dolvin17         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
-#define MAX_SIZE 100
+#define MAX_SIZE 500
 
 void	random_nbr(int *nbrs, int size)
 {
@@ -34,7 +46,7 @@ int	main(void)
 	int	i;
 
 	srand(time(NULL));
-	size = 5;
+	size = 500;
 	random_nbr(random_nbrs, size);
 	i = 0;
 	while (i < size)
