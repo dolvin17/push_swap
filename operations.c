@@ -6,158 +6,85 @@
 /*   By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 22:21:50 by dolvin17          #+#    #+#             */
-/*   Updated: 2023/11/24 23:45:56 by dolvin17         ###   ########.fr       */
+/*   Updated: 2023/12/08 10:57:13 by dolvin17         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	is_sorted(t_stack stack)
+void	ft_sa(char *operation, t_stack **head)
 {
-	int	i;
-
-	i = 0;
-	while (++i < stack.size)
-		if (stack.content[i - 1] > stack.content[i])
-			return (0);
-	return (1);
+	if (!*head || !(*head)->next)
+		;
+	write(1, operation, 3);
+	*head = (*head)->next;
+	(*head)->prev->prev = *head;
+	(*head)->prev->next = (*head)->next;
+	if ((*head)->next)
+		(*head)->next->prev = (*head)->prev;
+	(*head)->next = (*head)->prev;
+	(*head)->prev = NULL;
 }
 
-void	ft_sa(char *operation, t_stack *stack)
+void	ft_ra(char *operation, t_stack **head)
 {
-	int	temp;
+	t_stack	*last_node;
+	t_stack	*aux;
 
-	if (stack->size > 1)
+	if (!*head || !(*head)->next)
+		;
+	write(1, operation, 3);
+	aux = *head;
+	while (aux->next)
+		aux = aux->next;
+	last_node = aux;
+	last_node->next = *head;
+	*head = (*head)->next;
+	(*head)->prev = NULL;
+	last_node->next->prev = last_node;
+	last_node->next->next = NULL;
+}
+
+void	ft_rra(char *operation, t_stack **head)
+{
+	t_stack	*last_node;
+	t_stack	*aux;
+
+	if (!*head || !(*head)->next)
+		;
+	write(1, operation, 4);
+	aux = *head;
+	while (aux->next)
+		aux = aux->next;
+	last_node = aux;
+	last_node->prev->next = NULL;
+	last_node->next = *head;
+	last_node->prev = NULL;
+	*head = last_node;
+	last_node->next->prev = last_node;
+}
+
+void	ft_push(char	*operation, t_stack **dest, t_stack **src)
+{
+	t_stack	*push_element;
+
+	if (!*src)
+		;
+	write(1, operation, 3);
+	push_element = *src;
+	*src = (*src)->next;
+	if (*src)
+		(*src)->prev = NULL;
+	push_element->prev = NULL;
+	if (!*dest)
 	{
-		write(1, operation, 3);
-		temp = stack->content[0];
-		stack->content[0] = stack->content[1];
-		stack->content[1] = temp;
+		*dest = push_element;
+		push_element->next = NULL;
 	}
-}
-
-void	ft_ra(char *operation, t_stack *stack)
-{
-	int	temp;
-	int	i;
-
-	i = 0;
-	temp = stack->content[0];
-	if (stack->size > 1)
+	else
 	{
-		while (i < stack->size -1)
-		{
-			stack->content[i] = stack->content[i + 1];
-			i++;
-		}
-		stack->content[stack->size -1] = temp;
-		write(1, operation, 3);
-	}
-}
-
-void	ft_rra(char *operation, t_stack *stack)
-{
-	int	temp;
-	int	size;
-
-	size = stack->size - 1;
-	temp = stack->content[stack->size -1];
-	if (stack->size > 1)
-	{
-		while (size > 0)
-		{
-			stack->content[size] = stack->content[size - 1];
-			size--;
-		}
-		stack->content[0] = temp;
-		write(1, operation, 4);
-	}
-}
-
-void	ft_push_b(char *operation, t_stack *stack_a, t_stack *stack_b)
-{
-	int	*temp;
-	int	i;
-
-	if (stack_a->size > 0)
-	{
-		write(1, operation, 3);
-		stack_b->size++;
-		temp = (int *)malloc(sizeof(int) * stack_b->size);
-		if (!temp)
-			exit(1);
-		temp[0] = stack_a->content[0];
-		i = 1;
-		while (i < stack_b->size)
-		{
-			temp[i] = stack_b->content[i - 1];
-			i++;
-		}
-		free(stack_b->content);
-		stack_b->content = temp;
-		stack_a->size--;
-		if (stack_a->size > 0)
-		{
-			temp = (int *)malloc(sizeof(int) * stack_a->size);
-			if (!temp)
-				exit(1);
-			i = 0;
-			while (i < stack_a->size)
-			{
-				temp[i] = stack_a->content[i + 1];
-				i++;
-			}
-			free(stack_a->content);
-			stack_a->content = temp;
-		}
-		else
-		{
-			free(stack_a->content);
-			stack_a->content = NULL;
-		}
-	}
-}
-
-void	ft_push_a(char *operation, t_stack *stack_a, t_stack *stack_b)
-{
-	int	*temp;
-	int	i;
-
-	if (stack_b->size > 0)
-	{
-		write(1, operation, 3);
-		stack_a->size++;
-		temp = (int *)malloc(sizeof(int) * stack_a->size);
-		if (!temp)
-			exit(1);
-		temp[0] = stack_b->content[0];
-		i = 1;
-		while (i < stack_a->size)
-		{
-			temp[i] = stack_a->content[i - 1];
-			i++;
-		}
-		free(stack_a->content);
-		stack_a->content = temp;
-		stack_b->size--;
-		if (stack_b->size > 0)
-		{
-			temp = (int *)malloc(sizeof(int) * stack_b->size);
-			if (!temp)
-				exit(1);
-			i = 0;
-			while (i < stack_b->size)
-			{
-				temp[i] = stack_b->content[i + 1];
-				i++;
-			}
-			free(stack_b->content);
-			stack_b->content = temp;
-		}
-		else
-		{
-			free(stack_b->content);
-			stack_b->content = NULL;
-		}
+		push_element->next = *dest;
+		push_element->next->prev = push_element;
+		*dest = push_element;
 	}
 }
