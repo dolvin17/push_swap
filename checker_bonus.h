@@ -6,7 +6,7 @@
 /*   By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 02:06:11 by dolvin17          #+#    #+#             */
-/*   Updated: 2023/12/12 02:31:27 by dolvin17         ###   ########.fr       */
+/*   Updated: 2023/12/12 05:16:56 by dolvin17         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <stdlib.h>	/*Use Malloc, free, exit*/
 # include <stdbool.h>	/*USE cheapest value*/
 # include <errno.h>		/*print errors value*/
-# include "./Get_next_line/get_next_line.h"
+# include "./gnl/get_next_line.h"
 
 typedef struct s_stack
 {
