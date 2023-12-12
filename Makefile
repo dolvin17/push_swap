@@ -6,7 +6,7 @@
 #    By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/08 10:28:23 by dolvin17          #+#    #+#              #
-#    Updated: 2023/12/12 04:26:43 by dolvin17         ###   ########.fr        #
+#    Updated: 2023/12/12 05:16:32 by dolvin17         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,8 +25,8 @@ SRCS =		main.c \
 BONUS_SRC = checker.c \
 			checker_utils.c \
 			checker_utils2.c \
-			Get_next_line/get_next_line.c \
-			Get_next_line/get_next_line_utils.c \
+			gnl/get_next_line.c \
+			gnl/get_next_line_utils.c \
 
 OBJS = $(SRCS:.c=.o)
 BONUS_OBJ = $(BONUS_SRC:.c=.o)
