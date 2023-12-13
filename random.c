@@ -6,7 +6,7 @@
 /*   By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 12:01:59 by dolvin17          #+#    #+#             */
-/*   Updated: 2023/12/11 19:17:58 by dolvin17         ###   ########.fr       */
+/*   Updated: 2023/12/13 16:04:56 by dolvin17         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	main(void)
 	int	i;
 
 	srand(time(NULL));
-	size = 500;
+	size = 100;
 	random_nbr(random_nbrs, size);
 	i = 0;
 	while (i < size)
