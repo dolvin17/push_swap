@@ -6,7 +6,7 @@
 #    By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/08 10:28:23 by dolvin17          #+#    #+#              #
-#    Updated: 2023/12/12 05:16:32 by dolvin17         ###   ########.fr        #
+#    Updated: 2023/12/13 16:21:00 by dolvin17         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,18 +22,20 @@ SRCS =		main.c \
 			customizing_stack_b.c \
 			pushing_cheapest_stack_b.c \
 
-BONUS_SRC = checker.c \
-			checker_utils.c \
-			checker_utils2.c \
-			gnl/get_next_line.c \
-			gnl/get_next_line_utils.c \
+BONUS_SRC = checker_bonus/checker.c \
+			checker_bonus/checker_utils.c \
+			checker_bonus/checker_utils2.c \
+			checker_bonus/checking_operations.c \
+			checker_bonus/check_double_op.c \
+			checker_bonus/gnl/get_next_line.c \
+			checker_bonus/gnl/get_next_line_utils.c \
 
 OBJS = $(SRCS:.c=.o)
 BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
 CC = gcc
 CC_FLAGS = -Wall -Wextra -Werror -g
-RM_RF = @rm -rf
+RM_RF = rm -f
 NAME = push_swap
 BONUS = checker
 
