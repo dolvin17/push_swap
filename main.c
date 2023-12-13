@@ -6,7 +6,7 @@
 /*   By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 10:24:39 by dolvin17          #+#    #+#             */
-/*   Updated: 2023/12/12 01:24:30 by dolvin17         ###   ########.fr       */
+/*   Updated: 2023/12/13 17:36:20 by dolvin17         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,15 +52,16 @@ static	void	parse_stack_a(t_stack **stack_a, char **argv)
 		if (check_syntax(argv[i]))
 			free_and_print_error(stack_a);
 		nbr = long_atoi(argv[i]);
-		if (nbr > INT_MAX || nbr < INT_MIN)
+		if (nbr < INT_MAX && nbr > INT_MIN)
 			free_and_print_error(stack_a);
 		if (check_dup(*stack_a, nbr))
 			free_and_print_error(stack_a);
+		printf("%ld\n", nbr);
 		adding_back(stack_a, nbr);
 		i++;
 	}
 }
-/*
+
 void	print_stack(const t_stack *stack)
 {
 	const t_stack	*current;
@@ -71,7 +72,7 @@ void	print_stack(const t_stack *stack)
 		printf("%d ", current->data);
 		current = current->next;
 	}
-}*/
+}
 
 int	main(int argc, char **argv)
 {
