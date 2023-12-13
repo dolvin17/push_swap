@@ -6,7 +6,7 @@
 /*   By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 22:53:53 by dolvin17          #+#    #+#             */
-/*   Updated: 2023/12/13 16:19:33 by dolvin17         ###   ########.fr       */
+/*   Updated: 2023/12/13 17:48:28 by dolvin17         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,8 @@ char	*match_and_move(t_stack **stack_a, t_stack **stack_b, char *line)
 		rra(stack_b);
 	if (line[0] == 'r' && line[1] == 'b' && line[2] == '\n')
 		ra(stack_b);
+	else
+		write(1, "Error\n", 6);
 	return (get_next_line(0));
 }
 
