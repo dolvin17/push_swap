@@ -6,18 +6,17 @@
 /*   By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 13:03:24 by dolvin17          #+#    #+#             */
-/*   Updated: 2023/12/11 16:55:50 by dolvin17         ###   ########.fr       */
+/*   Updated: 2023/12/14 11:58:19 by dolvin17         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	checking(bool if_error, int value, char	*str)
+void	checking(bool if_error, char	*str)
 {
 	if (if_error)
 	{
-		errno = value;
-		perror(str);
+		write(1, str, 7);
 		exit(EXIT_FAILURE);
 	}
 }
