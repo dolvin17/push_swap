@@ -6,7 +6,7 @@
 /*   By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 10:24:39 by dolvin17          #+#    #+#             */
-/*   Updated: 2023/12/13 17:36:20 by dolvin17         ###   ########.fr       */
+/*   Updated: 2023/12/14 12:09:30 by dolvin17         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ static	void	adding_back(t_stack **stack, long nbr)
 
 static	void	parse_stack_a(t_stack **stack_a, char **argv)
 {
-	long	nbr;
-	int		i;
+	int	nbr;
+	int	i;
 
 	i = 0;
 	while (argv[i])
@@ -52,11 +52,10 @@ static	void	parse_stack_a(t_stack **stack_a, char **argv)
 		if (check_syntax(argv[i]))
 			free_and_print_error(stack_a);
 		nbr = long_atoi(argv[i]);
-		if (nbr < INT_MAX && nbr > INT_MIN)
+		if (nbr > INT_MAX || nbr < INT_MIN)
 			free_and_print_error(stack_a);
 		if (check_dup(*stack_a, nbr))
 			free_and_print_error(stack_a);
-		printf("%ld\n", nbr);
 		adding_back(stack_a, nbr);
 		i++;
 	}
@@ -81,9 +80,10 @@ int	main(int argc, char **argv)
 
 	stack_a = NULL;
 	stack_b = NULL;
-	checking(!argv[1], EINVAL, "Error: 0 arguments");
-	checking((argc == 2 && !argv[1][0]), EINVAL, "Error: Empty String");
-	checking((argv[1][0] == ' '), EINVAL, "Error: Bad input");
+	if (!argv[1])
+		return (0);
+	checking((argc == 2 && !argv[1][0]), "Error\n");
+	checking((argv[1][0] == ' '), "Error\n");
 	if (argc == 2)
 		argv = ft_split(argv[1], 32);
 	parse_stack_a(&stack_a, argv + 1);
