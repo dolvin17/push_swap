@@ -6,7 +6,7 @@
 /*   By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 15:12:11 by dolvin17          #+#    #+#             */
-/*   Updated: 2023/12/12 00:24:01 by dolvin17         ###   ########.fr       */
+/*   Updated: 2023/12/14 12:01:36 by dolvin17         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	long_atoi(char *str)
 {
-	long	num;
-	int		sign;
+	long long		num;
+	int				sign;
 
 	sign = 1;
 	num = 0;
@@ -28,6 +28,8 @@ int	long_atoi(char *str)
 	while (*str >= '0' && *str <= '9')
 	{
 		num = num * 10 + (*str - '0');
+		checking(num > INT_MAX, "Error\n");
+		checking(num < INT_MIN, "Error\n");
 		str++;
 	}
 	return (num * sign);
