@@ -6,7 +6,7 @@
 /*   By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 10:35:07 by dolvin17          #+#    #+#             */
-/*   Updated: 2023/12/12 02:25:55 by dolvin17         ###   ########.fr       */
+/*   Updated: 2023/12/14 11:53:39 by dolvin17         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int		check_dup(t_stack *stack_a, long nbr);
 void	free_stack(t_stack **stack);
 void	free_and_print_error(t_stack **stack_a);
 // Utils
-void	checking(bool if_error, int value, char *str);
+void	checking(bool if_error, char *str);
 t_stack	*max_value(t_stack *stack);
 t_stack	*min_value(t_stack *stack);
 bool	is_sorted(t_stack *stack);
