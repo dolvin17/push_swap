@@ -6,7 +6,7 @@
 /*   By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 22:21:50 by dolvin17          #+#    #+#             */
-/*   Updated: 2023/12/08 10:57:13 by dolvin17         ###   ########.fr       */
+/*   Updated: 2023/12/14 22:01:19 by dolvin17         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_sa(char *operation, t_stack **head)
 {
 	if (!*head || !(*head)->next)
-		;
+		return ;
 	write(1, operation, 3);
 	*head = (*head)->next;
 	(*head)->prev->prev = *head;
@@ -32,7 +32,7 @@ void	ft_ra(char *operation, t_stack **head)
 	t_stack	*aux;
 
 	if (!*head || !(*head)->next)
-		;
+		return ;
 	write(1, operation, 3);
 	aux = *head;
 	while (aux->next)
@@ -51,7 +51,7 @@ void	ft_rra(char *operation, t_stack **head)
 	t_stack	*aux;
 
 	if (!*head || !(*head)->next)
-		;
+		return ;
 	write(1, operation, 4);
 	aux = *head;
 	while (aux->next)
@@ -69,7 +69,7 @@ void	ft_push(char	*operation, t_stack **dest, t_stack **src)
 	t_stack	*push_element;
 
 	if (!*src)
-		;
+		return ;
 	write(1, operation, 3);
 	push_element = *src;
 	*src = (*src)->next;
