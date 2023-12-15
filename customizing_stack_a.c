@@ -6,7 +6,7 @@
 /*   By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 23:48:57 by ghuertas          #+#    #+#             */
-/*   Updated: 2023/12/11 19:09:20 by dolvin17         ###   ########.fr       */
+/*   Updated: 2023/12/14 22:01:02 by dolvin17         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	set_and_check_pos(t_stack	*stack)
 	int	media;
 
 	if (!stack)
-		;
+		return ;
 	current_position = 0;
 	media = check_len(stack) / 2;
 	while (stack)
@@ -87,7 +87,7 @@ static	void	match_cheapest(t_stack	*stack)
 	t_stack	*cheapest_node;
 
 	if (!stack)
-		;
+		return ;
 	cheapest_value = LONG_MAX;
 	while (stack)
 	{
