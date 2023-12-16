@@ -6,7 +6,7 @@
 /*   By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 02:06:11 by dolvin17          #+#    #+#             */
-/*   Updated: 2023/12/13 15:45:41 by dolvin17         ###   ########.fr       */
+/*   Updated: 2023/12/14 11:52:06 by dolvin17         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	**split(char *str, char c);
 int		ft_atoi(char *str);
 void	ft_free(t_stack **stack);
 void	free_and_print(t_stack **stack_a);
-void	iferror(bool iferror, int value, char *str);
+void	iferror(bool iferror, char *str);
 bool	sorted(t_stack *stack);
 // testing && exec operations
 void	sa(t_stack **head);
