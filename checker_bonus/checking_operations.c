@@ -6,7 +6,7 @@
 /*   By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 14:09:05 by dolvin17          #+#    #+#             */
-/*   Updated: 2023/12/13 14:54:27 by dolvin17         ###   ########.fr       */
+/*   Updated: 2023/12/14 21:56:35 by dolvin17         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	sa(t_stack **head)
 {
 	if (!*head || !(*head)->next)
-		;
+		return ;
 	*head = (*head)->next;
 	(*head)->prev->prev = *head;
 	(*head)->prev->next = (*head)->next;
@@ -31,7 +31,7 @@ void	ra(t_stack **head)
 	t_stack	*aux;
 
 	if (!*head || !(*head)->next)
-		;
+		return ;
 	aux = *head;
 	while (aux->next)
 		aux = aux->next;
@@ -49,7 +49,7 @@ void	rra(t_stack **head)
 	t_stack	*aux;
 
 	if (!*head || !(*head)->next)
-		;
+		return ;
 	aux = *head;
 	while (aux->next)
 		aux = aux->next;
@@ -66,7 +66,7 @@ void	push(t_stack **dest, t_stack **src)
 	t_stack	*push_element;
 
 	if (!*src)
-		;
+		return ;
 	push_element = *src;
 	*src = (*src)->next;
 	if (*src)
