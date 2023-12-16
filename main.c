@@ -6,7 +6,7 @@
 /*   By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 10:24:39 by dolvin17          #+#    #+#             */
-/*   Updated: 2023/12/14 12:09:30 by dolvin17         ###   ########.fr       */
+/*   Updated: 2023/12/16 19:31:19 by dolvin17         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ static	void	adding_back(t_stack **stack, long nbr)
 	t_stack	*last_node;
 
 	if (!*stack)
-		;
+		return ;
 	node = malloc(sizeof(t_stack));
 	if (!node)
-		;
+		return ;
 	node->next = NULL;
 	node->data = nbr;
 	if (*stack == NULL)
