@@ -6,7 +6,7 @@
 /*   By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 02:20:55 by dolvin17          #+#    #+#             */
-/*   Updated: 2023/12/13 13:51:37 by dolvin17         ###   ########.fr       */
+/*   Updated: 2023/12/14 11:51:25 by dolvin17         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,8 @@ int	ft_atoi(char *str)
 	while (*str >= '0' && *str <= '9')
 	{
 		num = num * 10 + (*str - '0');
+		iferror(num > INT_MAX, "Error\n");
+		iferror(num < INT_MIN, "Error\n");
 		str++;
 	}
 	return (num * sign);
