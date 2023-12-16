@@ -6,7 +6,7 @@
 /*   By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 02:04:25 by dolvin17          #+#    #+#             */
-/*   Updated: 2023/12/12 02:17:53 by dolvin17         ###   ########.fr       */
+/*   Updated: 2023/12/15 11:44:26 by dolvin17         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,16 +65,15 @@ void	ft_free(t_stack **stack)
 void	free_and_print(t_stack **stack_a)
 {
 	ft_free(stack_a);
-	write(1, "Error\n", 6);
+	write(1, "Error\n", 7);
 	exit(1);
 }
 
-void	iferror(bool if_error, int value, char	*str)
+void	iferror(bool if_error, char	*str)
 {
 	if (if_error)
 	{
-		errno = value;
-		perror(str);
+		write(1, str, 7);
 		exit(EXIT_FAILURE);
 	}
 }
