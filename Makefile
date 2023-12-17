@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+         #
+#    By: ghuertas <ghuertas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/08 10:28:23 by dolvin17          #+#    #+#              #
-#    Updated: 2023/12/13 16:21:00 by dolvin17         ###   ########.fr        #
+#    Updated: 2023/12/17 17:18:36 by ghuertas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ SRCS =		main.c \
 BONUS_SRC = checker_bonus/checker.c \
 			checker_bonus/checker_utils.c \
 			checker_bonus/checker_utils2.c \
+			checker_bonus/checker_utils3.c \
 			checker_bonus/checking_operations.c \
 			checker_bonus/check_double_op.c \
 			checker_bonus/gnl/get_next_line.c \
@@ -34,7 +35,7 @@ OBJS = $(SRCS:.c=.o)
 BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
 CC = gcc
-CC_FLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror -g3
 RM_RF = rm -f
 NAME = push_swap
 BONUS = checker
