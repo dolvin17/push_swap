@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+        */
+/*   By: ghuertas <ghuertas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 22:53:53 by dolvin17          #+#    #+#             */
-/*   Updated: 2023/12/16 19:25:44 by dolvin17         ###   ########.fr       */
+/*   Updated: 2023/12/17 17:28:58 by ghuertas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
-
 
 void	adding_node(t_stack **stack, long nbr)
 {
@@ -19,7 +18,7 @@ void	adding_node(t_stack **stack, long nbr)
 	t_stack	*node;
 	t_stack	*last_node;
 
-	if (!*stack)
+	if (!stack)
 		return ;
 	node = malloc(sizeof(t_stack));
 	if (!node)
@@ -60,16 +59,6 @@ void	parsing_args(t_stack **stack_a, char **argv)
 		adding_node(stack_a, nbr);
 		i++;
 	}
-}
-
-void	match_and_move2(t_stack **stack_a, t_stack **stack_b, char *l)
-{
-	if (l[0] == 'r' && l[1] == 'r' && l[2] == 'a' && l[3] == '\n')
-		rra(stack_a);
-	else if (l[0] == 'r' && l[1] == 'r' && l[2] == 'b' && l[3] == '\n')
-		rra(stack_b);
-	else if (l[0] == 'r' && l[1] == 'r' && l[2] == 'r' && l[3] == '\n')
-		rrr_both(stack_a, stack_b);
 }
 
 char	*match_and_move(t_stack **stack_a, t_stack **stack_b, char *l)
