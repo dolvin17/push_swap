@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+        */
+/*   By: ghuertas <ghuertas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 13:34:48 by dolvin17          #+#    #+#             */
-/*   Updated: 2023/12/10 19:08:37 by dolvin17         ###   ########.fr       */
+/*   Updated: 2023/12/17 17:20:42 by ghuertas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	check_syntax(char *str)
 	i = 0;
 	if (!(str[i] == '+' || str[i] == '-' || (str[i] >= '0' && str[i] <= '9')))
 		return (1);
-	if (str[i] == '+' || str[i] == '-' && !(str[1] >= '0' && str[1] <= '9'))
+	if ((str[i] == '+' || str[i] == '-') && !(str[1] >= '0' && str[1] <= '9'))
 		return (1);
 	if (str[i] <= '0' && str[i] >= '9')
 		return (1);
