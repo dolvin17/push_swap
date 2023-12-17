@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+        */
+/*   By: ghuertas <ghuertas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 02:06:11 by dolvin17          #+#    #+#             */
-/*   Updated: 2023/12/14 11:52:06 by dolvin17         ###   ########.fr       */
+/*   Updated: 2023/12/17 17:22:00 by ghuertas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	ft_free(t_stack **stack);
 void	free_and_print(t_stack **stack_a);
 void	iferror(bool iferror, char *str);
 bool	sorted(t_stack *stack);
+void	match_and_move2(t_stack **stack_a, t_stack **stack_b, char *l);
 // testing && exec operations
 void	sa(t_stack **head);
 void	ra(t_stack **head);
