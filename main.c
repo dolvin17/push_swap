@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+        */
+/*   By: ghuertas <ghuertas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 10:24:39 by dolvin17          #+#    #+#             */
-/*   Updated: 2023/12/16 19:31:19 by dolvin17         ###   ########.fr       */
+/*   Updated: 2023/12/17 17:23:17 by ghuertas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static	void	adding_back(t_stack **stack, long nbr)
 	t_stack	*node;
 	t_stack	*last_node;
 
-	if (!*stack)
+	if (!stack)
 		return ;
 	node = malloc(sizeof(t_stack));
 	if (!node)
