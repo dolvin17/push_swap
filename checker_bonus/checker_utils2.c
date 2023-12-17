@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker_utils2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+        */
+/*   By: ghuertas <ghuertas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 02:20:55 by dolvin17          #+#    #+#             */
-/*   Updated: 2023/12/14 11:51:25 by dolvin17         ###   ########.fr       */
+/*   Updated: 2023/12/17 17:20:27 by ghuertas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,40 +85,4 @@ char	**split(char *str, char c)
 	}
 	res[i] = NULL;
 	return (res);
-}
-
-int	ft_atoi(char *str)
-{
-	long	num;
-	int		sign;
-
-	sign = 1;
-	num = 0;
-	while (*str == 32 || (*str >= 9 && *str <= 13))
-		str++;
-	if (*str == '-')
-		sign = sign * -1;
-	if (*str == '+' || *str == '-')
-		str++;
-	while (*str >= '0' && *str <= '9')
-	{
-		num = num * 10 + (*str - '0');
-		iferror(num > INT_MAX, "Error\n");
-		iferror(num < INT_MIN, "Error\n");
-		str++;
-	}
-	return (num * sign);
-}
-
-bool	sorted(t_stack *stack)
-{
-	if (!stack)
-		return (1);
-	while (stack->next)
-	{
-		if (stack->data > stack->next->data)
-			return (false);
-		stack = stack->next;
-	}
-	return (true);
 }
