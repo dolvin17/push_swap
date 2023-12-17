@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+        */
+/*   By: ghuertas <ghuertas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 03:17:21 by ghuertas          #+#    #+#             */
-/*   Updated: 2023/12/12 05:14:20 by dolvin17         ###   ########.fr       */
+/*   Updated: 2023/12/17 17:27:17 by ghuertas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,4 +110,3 @@ void	ft_free_strs(char **str, char **str1, char **str2)
 		*str2 = NULL;
 	}
 }
-
