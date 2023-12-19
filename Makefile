@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ghuertas <ghuertas@student.42.fr>          +#+  +:+       +#+         #
+#    By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/08 10:28:23 by dolvin17          #+#    #+#              #
-#    Updated: 2023/12/17 17:18:36 by ghuertas         ###   ########.fr        #
+#    Updated: 2023/12/19 17:30:03 by dolvin17         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,9 +44,9 @@ BONUS = checker
 all: $(NAME) $(BONUS)
 
 $(NAME): $(OBJS)
-	$(CC) $(CC_FLAGS) $(OBJS) -o $(NAME)
+	$(CC) $(OBJS) -o $(NAME)
 $(BONUS): $(BONUS_OBJ)
-	$(CC) $(CC_FLAGS) $(BONUS_OBJ) -o $(BONUS)
+	$(CC) $(BONUS_OBJ) -o $(BONUS)
 bonus: $(BONUS)
 clean:
 	@$(RM_RF) $(OBJS) $(BONUS_OBJ)
