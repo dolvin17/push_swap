@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ghuertas <ghuertas@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 10:24:39 by dolvin17          #+#    #+#             */
-/*   Updated: 2023/12/17 17:23:17 by ghuertas         ###   ########.fr       */
+/*   Updated: 2023/12/19 02:38:04 by dolvin17         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,18 +58,6 @@ static	void	parse_stack_a(t_stack **stack_a, char **argv)
 			free_and_print_error(stack_a);
 		adding_back(stack_a, nbr);
 		i++;
-	}
-}
-
-void	print_stack(const t_stack *stack)
-{
-	const t_stack	*current;
-
-	current = stack;
-	while (current != NULL)
-	{
-		printf("%d ", current->data);
-		current = current->next;
 	}
 }
 
