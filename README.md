@@ -17,11 +17,17 @@ Getting Started
 To get started with Push Swap, clone the repository and compile the code using the provided Makefile. Then, you can run the program with your input data.
 
 git clone https://github.com/dolvin17/push_swap.git
+
 cd push_swap
+
 make
+
 edit size of nbrs array on random.c at main.
+
 gcc random.c
+
 ./a.out > nbrs.txt
+
 ./push_swap $(cat nbrs.txt)
 
 cheers! 
