@@ -6,7 +6,7 @@
 /*   By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 10:24:39 by dolvin17          #+#    #+#             */
-/*   Updated: 2023/12/19 02:38:04 by dolvin17         ###   ########.fr       */
+/*   Updated: 2024/04/10 15:42:17 by dolvin17         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ int	main(int argc, char **argv)
 		return (0);
 	checking((argc == 2 && !argv[1][0]), "Error\n");
 	checking((argv[1][0] == ' '), "Error\n");
+	if (argc == 2 && !ft_strchr(argv[1], ' '))
+		exit(EXIT_SUCCESS);
 	if (argc == 2)
 		argv = ft_split(argv[1], 32);
 	parse_stack_a(&stack_a, argv + 1);
