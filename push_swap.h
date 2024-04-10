@@ -6,7 +6,7 @@
 /*   By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 10:35:07 by dolvin17          #+#    #+#             */
-/*   Updated: 2023/12/14 11:53:39 by dolvin17         ###   ########.fr       */
+/*   Updated: 2024/04/10 15:21:31 by dolvin17         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <stdlib.h>	/*Use Malloc, free, exit*/
 # include <stdbool.h>	/*USE cheapest value*/
 # include <errno.h>		/*print errors value*/
+# include <string.h>	/*USE STRCHR*/
 
 typedef struct s_stack
 {
@@ -39,6 +40,7 @@ int		check_syntax(char *str);
 int		check_dup(t_stack *stack_a, long nbr);
 void	free_stack(t_stack **stack);
 void	free_and_print_error(t_stack **stack_a);
+char	*ft_strchr(const char *str, int c);
 // Utils
 void	checking(bool if_error, char *str);
 t_stack	*max_value(t_stack *stack);
